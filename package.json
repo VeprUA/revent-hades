@@ -1,0 +1,32 @@
+{
+  "name": "revent-hades",
+  "version": "1.0.0",
+  "description": "Service to submit and monitor software errrors",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeprUA/revent-hades.git"
+  },
+  "keywords": [
+    "Revent",
+    "Studio",
+    "dashboard",
+    "error",
+    "errorhandling"
+  ],
+  "author": "Revent Studio, Maksym Yadvinskyy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VeprUA/revent-hades/issues"
+  },
+  "homepage": "reventstudio.com",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "mysql": "^2.13.0"
+  }
+}
