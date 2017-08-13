@@ -1,20 +1,16 @@
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const app = express();
 
-var messages = require('./routes/v1/messages');
-
-var app = express();
-
-console.log("Running " + app.get('env'));
-console.log(">>>>>>>>");
+const messages = require('./routes/v1/messages');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
-app.use('/authenticate', auth);
+//app.use('/authenticate', auth);
 app.use('/api/v1/messages', messages);
 
 // error handlers
@@ -37,4 +33,7 @@ if (app.get('env') === 'production') {
 
 }
 
-module.exports = app;
+app.listen(3000, function () {
+    console.log("Running " + app.get('env'));
+    console.log(">>>>>>>>");
+})
