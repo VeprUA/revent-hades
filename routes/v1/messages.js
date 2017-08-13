@@ -4,10 +4,8 @@ const util = require('../../services/util');
 const MessageService = require('../../services/message.service');
 
 router.get('/', (req, res)=> {
-    //util.sendResponse(res, null, "Test!");
     // Fetch all errors
     MessageService.fetchAllMessages((error, data)=>{
-        // TODO: Add query filters
         return util.sendResponse(res, error, data);
     });
 });
@@ -19,11 +17,12 @@ router.post('/add', (req, res)=> {
     });
 });
 
-router.get('/:errorId', (req, res)=>{
+// TODO add more routes
+/* router.get('/:errorId', (req, res)=>{
     // Fetch an error via errorId
     MessageService.fetchMessage(req.params, (error, data)=>{
         return util.sendResponse(res, error, data);
     });
-});
+}); */
 
 module.exports = router;
